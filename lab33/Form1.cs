@@ -20,8 +20,7 @@ namespace lab33
         {
             InitializeComponent();
 
-            // Enlace de eventos por código (el -= evita que se ejecuten dos veces
-            // si el Designer todavía tiene alguno enlazado)
+
             btnAgregar.Click -= btnAgregar_Click;
             btnAgregar.Click += btnAgregar_Click;
 
@@ -43,18 +42,18 @@ namespace lab33
             return cboProducto.SelectedItem.ToString().Split('-')[0].Trim();
         }
 
-        // Paso 6: sender es el control que disparó el evento (cboProducto)
+
         private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combo = (ComboBox)sender;
             string producto = combo.SelectedItem.ToString().Split('-')[0].Trim();
 
-            // Busca la imagen en Resources; si no existe, queda vacío (sin error)
-            picProducto.Image =
-                Properties.Resources.ResourceManager.GetObject(producto.ToLower()) as Image;
+           
+
+            picProducto.Image = null;
         }
 
-        // Pasos 4 y 5
+        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (cboProducto.SelectedIndex < 0)
@@ -102,7 +101,7 @@ namespace lab33
             lblTotal.Text = "Total: " + totalPedido.ToString("C");
         }
 
-        // Reto: Limpiar
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             lstResumen.Items.Clear();
