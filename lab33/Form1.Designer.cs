@@ -31,24 +31,24 @@
             lblTitulo = new Label();
             lblIntegrantes = new Label();
             grpProducto = new GroupBox();
-            cboProducto = new ComboBox();
+            picProducto = new PictureBox();
             nudCantidad = new NumericUpDown();
-            pictureBox1 = new PictureBox();
+            cboProducto = new ComboBox();
             grpEntrega = new GroupBox();
-            rdbLocal = new RadioButton();
             rdbDomicilio = new RadioButton();
+            rdbLocal = new RadioButton();
             grpExtras = new GroupBox();
-            chkQueso = new CheckBox();
-            chkBebida = new CheckBox();
-            chkPapas = new CheckBox();
             chkDescuento = new CheckBox();
+            chkPapas = new CheckBox();
+            chkBebida = new CheckBox();
+            chkQueso = new CheckBox();
             lblTotal = new Label();
             btnLimpiar = new Button();
             btnAgregar = new Button();
             lstResumen = new ListBox();
             grpProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picProducto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             grpEntrega.SuspendLayout();
             grpExtras.SuspendLayout();
             SuspendLayout();
@@ -70,11 +70,10 @@
             lblIntegrantes.Size = new Size(147, 30);
             lblIntegrantes.TabIndex = 1;
             lblIntegrantes.Text = "Roberto He / 8-1045-55\r\nAdrian De La Cruz / 8-1042";
-            lblIntegrantes.Click += lblIntegrantes_Click;
             // 
             // grpProducto
             // 
-            grpProducto.Controls.Add(pictureBox1);
+            grpProducto.Controls.Add(picProducto);
             grpProducto.Controls.Add(nudCantidad);
             grpProducto.Controls.Add(cboProducto);
             grpProducto.Location = new Point(342, 163);
@@ -84,15 +83,13 @@
             grpProducto.TabStop = false;
             grpProducto.Text = "Producto y Cantidad";
             // 
-            // cboProducto
+            // picProducto
             // 
-            cboProducto.FormattingEnabled = true;
-            cboProducto.Items.AddRange(new object[] { "Pizza - $8.00", "Hamburguesa - $6.00", "Ensalada - $5.00" });
-            cboProducto.Location = new Point(21, 28);
-            cboProducto.Name = "cboProducto";
-            cboProducto.Size = new Size(125, 23);
-            cboProducto.TabIndex = 0;
-            cboProducto.Text = "Items";
+            picProducto.Location = new Point(19, 64);
+            picProducto.Name = "picProducto";
+            picProducto.Size = new Size(266, 152);
+            picProducto.TabIndex = 2;
+            picProducto.TabStop = false;
             // 
             // nudCantidad
             // 
@@ -104,13 +101,15 @@
             nudCantidad.TabIndex = 1;
             nudCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // pictureBox1
+            // cboProducto
             // 
-            pictureBox1.Location = new Point(19, 64);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(266, 152);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            cboProducto.FormattingEnabled = true;
+            cboProducto.Items.AddRange(new object[] { "Pizza - $8.00", "Hamburguesa - $6.00", "Ensalada - $5.00" });
+            cboProducto.Location = new Point(21, 28);
+            cboProducto.Name = "cboProducto";
+            cboProducto.Size = new Size(125, 23);
+            cboProducto.TabIndex = 0;
+            cboProducto.Text = "Items";
             // 
             // grpEntrega
             // 
@@ -123,6 +122,16 @@
             grpEntrega.TabStop = false;
             grpEntrega.Text = "Tipo de Entrega";
             // 
+            // rdbDomicilio
+            // 
+            rdbDomicilio.AutoSize = true;
+            rdbDomicilio.Location = new Point(21, 53);
+            rdbDomicilio.Name = "rdbDomicilio";
+            rdbDomicilio.Size = new Size(132, 19);
+            rdbDomicilio.TabIndex = 1;
+            rdbDomicilio.Text = "A domicilio (+$2.00)";
+            rdbDomicilio.UseVisualStyleBackColor = true;
+            // 
             // rdbLocal
             // 
             rdbLocal.AutoSize = true;
@@ -134,16 +143,6 @@
             rdbLocal.TabStop = true;
             rdbLocal.Text = "Para comer en local ($0.00)";
             rdbLocal.UseVisualStyleBackColor = true;
-            // 
-            // rdbDomicilio
-            // 
-            rdbDomicilio.AutoSize = true;
-            rdbDomicilio.Location = new Point(21, 53);
-            rdbDomicilio.Name = "rdbDomicilio";
-            rdbDomicilio.Size = new Size(132, 19);
-            rdbDomicilio.TabIndex = 1;
-            rdbDomicilio.Text = "A domicilio (+$2.00)";
-            rdbDomicilio.UseVisualStyleBackColor = true;
             // 
             // grpExtras
             // 
@@ -158,15 +157,25 @@
             grpExtras.TabStop = false;
             grpExtras.Text = "Ingredientes / Extras";
             // 
-            // chkQueso
+            // chkDescuento
             // 
-            chkQueso.AutoSize = true;
-            chkQueso.Location = new Point(15, 24);
-            chkQueso.Name = "chkQueso";
-            chkQueso.Size = new Size(134, 19);
-            chkQueso.TabIndex = 0;
-            chkQueso.Text = "Queso Extra (+$1.00)";
-            chkQueso.UseVisualStyleBackColor = true;
+            chkDescuento.AutoSize = true;
+            chkDescuento.Location = new Point(15, 99);
+            chkDescuento.Name = "chkDescuento";
+            chkDescuento.Size = new Size(182, 19);
+            chkDescuento.TabIndex = 3;
+            chkDescuento.Text = "Cliente Frecuente (10% Desc.)";
+            chkDescuento.UseVisualStyleBackColor = true;
+            // 
+            // chkPapas
+            // 
+            chkPapas.AutoSize = true;
+            chkPapas.Location = new Point(15, 74);
+            chkPapas.Name = "chkPapas";
+            chkPapas.Size = new Size(134, 19);
+            chkPapas.TabIndex = 2;
+            chkPapas.Text = "Papas Fritas (+$2.00)";
+            chkPapas.UseVisualStyleBackColor = true;
             // 
             // chkBebida
             // 
@@ -178,35 +187,24 @@
             chkBebida.Text = "Bebida (+$1.50)";
             chkBebida.UseVisualStyleBackColor = true;
             // 
-            // chkPapas
+            // chkQueso
             // 
-            chkPapas.AutoSize = true;
-            chkPapas.Location = new Point(15, 74);
-            chkPapas.Name = "chkPapas";
-            chkPapas.Size = new Size(134, 19);
-            chkPapas.TabIndex = 2;
-            chkPapas.Text = "Papas Fritas (+$2.00)";
-            chkPapas.UseVisualStyleBackColor = true;
-            chkPapas.CheckedChanged += chkPapas_CheckedChanged;
-            // 
-            // chkDescuento
-            // 
-            chkDescuento.AutoSize = true;
-            chkDescuento.Location = new Point(15, 99);
-            chkDescuento.Name = "chkDescuento";
-            chkDescuento.Size = new Size(182, 19);
-            chkDescuento.TabIndex = 3;
-            chkDescuento.Text = "Cliente Frecuente (10% Desc.)";
-            chkDescuento.UseVisualStyleBackColor = true;
+            chkQueso.AutoSize = true;
+            chkQueso.Location = new Point(15, 24);
+            chkQueso.Name = "chkQueso";
+            chkQueso.Size = new Size(134, 19);
+            chkQueso.TabIndex = 0;
+            chkQueso.Text = "Queso Extra (+$1.00)";
+            chkQueso.UseVisualStyleBackColor = true;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
             lblTotal.Location = new Point(565, 424);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(38, 15);
+            lblTotal.Size = new Size(33, 15);
             lblTotal.TabIndex = 4;
-            lblTotal.Text = "label1";
+            lblTotal.Text = "Total";
             // 
             // btnLimpiar
             // 
@@ -233,6 +231,7 @@
             lstResumen.Name = "lstResumen";
             lstResumen.Size = new Size(349, 79);
             lstResumen.TabIndex = 7;
+            lstResumen.Visible = true;
             // 
             // Form1
             // 
@@ -251,8 +250,8 @@
             Name = "Form1";
             Text = "Form1";
             grpProducto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picProducto).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             grpEntrega.ResumeLayout(false);
             grpEntrega.PerformLayout();
             grpExtras.ResumeLayout(false);
@@ -266,7 +265,7 @@
         private Label lblTitulo;
         private Label lblIntegrantes;
         private GroupBox grpProducto;
-        private PictureBox pictureBox1;
+        private PictureBox picProducto;
         private NumericUpDown nudCantidad;
         private ComboBox cboProducto;
         private GroupBox grpEntrega;
