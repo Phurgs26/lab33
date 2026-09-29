@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="C:\Users\PHU\Desktop\UTP\DS4\LAB3.cs" Link="LAB3.cs" />
+    <EmbeddedResource Remove="LAB3.resx" />
   </ItemGroup>
 
 </Project>
